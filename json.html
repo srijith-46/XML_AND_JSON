@@ -1,0 +1,48 @@
+<html>
+<head>
+    <h2>Displaying Student Information Stored in JSON using JavaScript</h2>
+    <script>
+   
+function CreateTableFromJSON()
+{   
+  var students = [
+                {
+                    "stud_ID": "RVCE22MCA009",
+                    "stud_Name": "Srijith",
+                    "Major": "Computer Science",
+                    "mobile": "12345678"
+                },
+                {
+                    "stud_ID": "RVCE22MCA056",
+                    "stud_Name": "Udith",
+                    "Major": "Web App Security",
+                    "mobile": "12345678"
+                },
+                {
+                    "stud_ID": "RVCE20MCA999",
+                    "stud_Name": "Yogay",
+                    "Major": "Computer Networks",
+                    "mobile": "12345678"
+                }
+        ]
+        
+
+var tableBody = '<table border="1"><tr><td>Student-id</td><td >Student Name</td><td >Major</td><td>Mobile</td></tr>'
+            
+        students.forEach(function(d)
+        {
+            tableBody += '<tr><td>'+d.stud_ID+'</td><td>'+d.stud_Name+'</td><td>'+d.Major+'</td><td>'+d.mobile+'</td></tr>';   
+        });
+            tableBody += '<table>';
+    
+          
+           var divContainer = document.getElementById("showData").innerHTML = tableBody;
+              }
+    </script>
+   
+</head>
+<body>
+    <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
+    <p id="showData"></p>
+</body>
+ </html>
